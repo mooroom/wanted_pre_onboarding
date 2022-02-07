@@ -49,7 +49,7 @@ const ModalBody = styled.div`
   color: var(--primary);
 `;
 
-function Modal() {
+function Modal({ content }) {
   const [modal, setModal] = useState(false);
   return (
     <>
@@ -58,12 +58,16 @@ function Modal() {
           <ModalHeader>
             <Close onClick={() => setModal(false)} />
           </ModalHeader>
-          <ModalBody>HELLO CODESTATES!</ModalBody>
+          <ModalBody>{content}</ModalBody>
         </ModalBlock>
       </DarkBackground>
       <StyledButton onClick={() => setModal(true)}>Open Modal</StyledButton>
     </>
   );
 }
+
+Modal.defaultProps = {
+  content: "HELLO CODESTATES",
+};
 
 export default Modal;
