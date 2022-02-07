@@ -12,7 +12,7 @@ const containerBorderRadius = (circleDiameter + containerPadding * 2) / 2;
 const animateDistance = containerWidth - circleDiameter - containerPadding * 2;
 const animateTime = 250;
 
-const ToggleContainer = styled.div`
+const ToggleBlock = styled.div`
   position: relative;
   width: ${`${containerWidth}px`};
   height: ${`${containerHeight}px`};
@@ -62,12 +62,12 @@ function Toggle() {
 
   return (
     <>
-      <ToggleContainer>
+      <ToggleBlock>
         <Slider toggle={toggle} />
         <CircleContainer>
           <Circle onClick={handleToggle} toggle={toggle} />
         </CircleContainer>
-      </ToggleContainer>
+      </ToggleBlock>
       <p>Toggle Switch {toggle ? "ON" : "OFF"}</p>
     </>
   );
