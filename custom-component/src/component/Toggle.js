@@ -25,7 +25,7 @@ const ToggleBlock = styled.div`
 const Slider = styled.div`
   position: absolute;
   z-index: 1;
-  background: gray;
+  background: var(--secondary);
   top: 0;
   right: 0;
   width: ${({ toggle }) => (toggle ? "0px" : "100%")};

@@ -1,5 +1,7 @@
 :root {
   --primary: rgb(63, 5, 194);
+  --secondary: rgb(197, 197, 197);
+  --text-gray: rgb(168, 168, 168);
 }
 
 .App {
