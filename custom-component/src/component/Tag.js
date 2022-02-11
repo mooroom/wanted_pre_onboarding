@@ -6,9 +6,9 @@ const TagsBlock = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  min-height: 63.5px;
+  min-height: 73px;
   padding: 12px 20px;
-  border-radius: 5px;
+  border-radius: 7px;
   font-size: 18px;
   width: 500px;
   border: 1px solid var(--secondary);
@@ -26,8 +26,8 @@ const TagItemBlock = styled.li`
   background: var(--primary);
   display: flex;
   align-items: center;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 7px;
   margin: 3px;
 `;
 
