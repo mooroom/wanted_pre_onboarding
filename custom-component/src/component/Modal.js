@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { MdOutlineClose } from "react-icons/md";
 
 const DarkBackground = styled.div`
   position: fixed;
@@ -56,7 +57,7 @@ function Modal({ content }) {
       <DarkBackground visible={modal}>
         <ModalBlock>
           <ModalHeader>
-            <Close onClick={() => setModal(false)} />
+            <MdOutlineClose onClick={() => setModal(false)} />
           </ModalHeader>
           <ModalBody>{content}</ModalBody>
         </ModalBlock>

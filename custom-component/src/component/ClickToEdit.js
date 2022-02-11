@@ -58,7 +58,7 @@ function ClickToEdit({ formData }) {
 
   const onChange = (e) => {
     const { value, name } = e.target;
-    console.log(`name: ${name}, value: ${value}`);
+
     setInputs({
       ...inputs,
       [name]: value,
