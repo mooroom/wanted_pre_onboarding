@@ -35,6 +35,7 @@ const TabItem = styled.li`
 
 function Tab({ data }) {
   const [tabItems, setTabItems] = useState(null);
+  const [content, setContent] = useState(null);
 
   useEffect(() => {
     const tmp = [];
@@ -46,6 +47,8 @@ function Tab({ data }) {
   }, [data]);
 
   const handleTabClick = (id) => {
+    setContent(tabItems[id].content);
+
     setTabItems(
       tabItems.map((item) =>
         item.id === id ? { ...item, active: true } : { ...item, active: false }
@@ -54,25 +57,34 @@ function Tab({ data }) {
   };
 
   return (
-    <TabBlock>
-      <TabContainer>
-        {tabItems &&
-          tabItems.map((item) => (
-            <TabItem
-              key={item.id}
-              active={item.active}
-              onClick={() => handleTabClick(item.id)}
-            >
-              {item.title}
-            </TabItem>
-          ))}
-      </TabContainer>
-    </TabBlock>
+    <div>
+      <TabBlock>
+        <TabContainer>
+          {tabItems &&
+            tabItems.map((item) => (
+              <TabItem
+                key={item.id}
+                active={item.active}
+                onClick={() => handleTabClick(item.id)}
+              >
+                {item.title}
+              </TabItem>
+            ))}
+        </TabContainer>
+      </TabBlock>
+      <div>
+        <h3 style={{ textAlign: "center" }}>{content}</h3>
+      </div>
+    </div>
   );
 }
 
 Tab.defaultProps = {
-  data: [{ title: "Tab1" }, { title: "Tab2" }, { title: "Tab3" }],
+  data: [
+    { title: "Tab1", content: "Tab menu One" },
+    { title: "Tab2", content: "Tab menu Two" },
+    { title: "Tab3", content: "Tab menu three" },
+  ],
 };
 
 export default Tab;
